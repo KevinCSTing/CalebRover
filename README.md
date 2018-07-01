@@ -1,5 +1,8 @@
 # CalebRover
-This repo will contain python code for remote control (over wifi) and for autonomous functionality of a rover I made with a raspberry pi that I named Caleb.
+This repo contains python code for remote control (over wifi) and for autonomous functionality of a rover I made with a raspberry pi that I named Caleb.
+
+Why Caleb?
+ Caleb was created to be a surveillance rover. I named it Caleb after one of the many spies that Moses sent out to gather information about the Promised Land. Caleb and another, Joshua, were the only ones who came back with good news. I plan to make another rover and name it Joshua and I hope to have it balance on two wheels. Caleb is my expermiental rover.
 
 SPECS
 Hardware:
