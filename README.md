@@ -4,7 +4,7 @@ This repo will contain python code for remote control (over wifi) and for autono
 SPECS
 Hardware:
     Raspberry Pi 3 Model B: https://www.amazon.com/CanaKit-Raspberry-Complete-Starter-Kit/dp/B01C6Q2GSY
-    32gb sd card
+    <p>32gb sd card</p>
     Raspberry Pi NoIR camera: https://tinyurl.com/y9gvt3de
     L298n motor driver: https://tinyurl.com/ybfan2f7
     chassis: https://tinyurl.com/y8n8bfb7
