@@ -26,3 +26,6 @@ GPIO controls for L298n: https://www.youtube.com/watch?v=AZSiqj0NZgU&t=568s
 keyboard control with curses: https://www.youtube.com/watch?v=XvOONPSoglY&t=827s
 
 coding ultrasonic sensor: https://www.youtube.com/watch?v=wCKbpw5bQMs&index=10&list=PLQVvvaa0QuDeJlgD1RX9_49tMLUxvIxF4
+
+Demo of wifi control here: https://www.youtube.com/watch?v=9yMMRtmhkM8
+Camera POV: https://www.youtube.com/watch?v=77kketjcHkQ
