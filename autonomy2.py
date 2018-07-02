@@ -21,6 +21,18 @@ PIN_ECHO = 31
 GPIO.setup(PIN_TRIGGER, GPIO.OUT)
 GPIO.setup(PIN_ECHO, GPIO.IN) 
 
+dist = 0
+tf = 1
+
+def init():
+    print dist
+    turn = random.randint(1,2)
+    print turn
+    if dist >= 2:
+	    left(2)
+    else:
+	    right(1)
+
 def distance():
     GPIO.output(PIN_TRIGGER, GPIO.LOW)
     print "waiting for sensor to settle"
@@ -37,26 +49,71 @@ def distance():
        pulse_end_time = time.time()
 
     pulse_duration = pulse_end_time - pulse_start_time
-    distance = round(pulse_duration / 0.000148, 2)
-    print "distance: ", distance,"in"
-    move(distance)
+    distance = pulse_duration * 34300/2
+    print "distance: ", distance,"cm"
+    #move(distance)
+    return distance
 
-def move(dist):
+def makeATurn():
+    turn = random.randint(1,2)
+    if turn == 1:
+        return left(tf)
+    else:
+	    return right(tf)
+		
+#directions
+def forward(tf):
+    dist = distance()
     if dist > 5:
         print "forward"
         GPIO.output(7,False)
         GPIO.output(11,True)
         GPIO.output(13,True)
         GPIO.output(15,False)
-        time.sleep(5)
+        time.sleep(tf)
         GPIO.output(7,False)
         GPIO.output(11,False)
         GPIO.output(13,False)
         GPIO.output(15,False)
         GPIO.cleanup()
     else:
-        print "gonna crash"
-    
+        print "reversing"
+        reverse(tf)
 
-distance()
+def reverse(tf):
+    GPIO.output(7,True)
+    GPIO.output(11,False)
+    GPIO.output(13,False)
+    GPIO.output(15,True)
+    time.sleep(tf)
+    GPIO.cleanup()
+    makeATurn()
+	#random turn maybe?
+
+def left(tf):
+    print "turning left"
+    GPIO.output(7,True)
+    GPIO.output(11,False)
+    GPIO.output(13,True)
+    GPIO.output(15,False)
+    time.sleep(tf)
+    GPIO.cleanup()	
+
+def right(tf):
+    print "turning right"
+    GPIO.output(7,False)
+    GPIO.output(11,True)
+    GPIO.output(13,False)
+    GPIO.output(15,True)
+    time.sleep(tf)
+    GPIO.cleanup()
+
+def stop(tf):
+    print "stopping"
+    GPIO.output(7,False)
+    GPIO.output(11,False)
+    GPIO.output(13,False)
+    GPIO.output(15,False)
+    GPIO.cleanup()	
+init()
 			
