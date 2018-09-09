@@ -104,14 +104,14 @@ def distanceToObstacle():
     print "distance: ", distance, "cm"
     return distance
 
-def drive(dist):
+def drive():
     start = time.time()
-    print dist," cm"
     #this will iterate everything under 60s
     while start > time.time() - 60:
         if distanceToObstacle() >= 10:
             forward()
         else:
+            print "oh no, obstacle ahead"
             stop()
             time.sleep(0.8)           
             reverse()
@@ -120,9 +120,9 @@ def drive(dist):
 
 def main():
     clearGPIO()
-    print "making my way downtown"
+    print "Got places to go; places to be..."
     #Start driving
-    drive(distanceToObstacle())
+    drive()
 
 if __name__ == "__main__":
     try:
